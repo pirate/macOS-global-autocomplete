@@ -31,12 +31,12 @@ cd macOS-global-autocomplete
 ```
 ### 3. Set up macOS-global-autocomplete
 
-Edit `bitbar-autocomplete.1s.sh` in the BitBar plugins folder to point to the correct path with the git repo.
+Edit `bitbar-autocomplete.1s.sh` to point to the correct path of the git repo you just cloned.
 ```
 /usr/local/bin/pypy /path/to/macOS-global-autocomplete/autocomplete.py
 ```
 
-Then copy it into place to enable it in BitBar:
+Then copy it into your plugins folder to enable it in BitBar:
 ```bash
 cp bitbar-autocomplete.1s.sh /path/to/bitbar/plugins/folder
 ```
