@@ -1,10 +1,9 @@
 # System-Wide Autocomplete for macOS
 
-System-wide autocomplete for macOS that learns what as you type and works in **all** text fields!
+An autocomplete prompt app for macOS that learns what as you type and works in **all text fields** system-wide!
 
-The idea was to have a small popup in your menubar or as a transparent dropdown,
-where autocomplete suggestions are provided based on **all words ever typed on 
-the computer**.
+The idea was to have a small, global popup in your menubar or as a transparent dropdown,
+where autocomplete suggestions are provided based on **all words ever typed on the computer**.
 
 Unfoturnately this just has too many downsides.  You're essentially continually keylogging
 yourself for minor convenience, and it has the potential to reveal passwords or embarrassing
