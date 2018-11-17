@@ -1,18 +1,55 @@
 # osx-global-autocomplete
-System-wide autocompleting that learns what you type and works in any app!
+System-wide autocomplete for macOS that learns what as you type and works in **all** text fields!
 
 The idea was to have a small popup in your menubar or as a transparent dropdown,
-who's autocomplete suggestions are prompted from **all words ever typed on 
+where autocomplete suggestions are provided based on **all words ever typed on 
 the computer**.
 
-Unfoturnately this just has too mnay downsides.  You're essentially continually keylogging
+Unfoturnately this just has too many downsides.  You're essentially continually keylogging
 yourself for minor convenience, and it has the potential to reveal passwords or embarrassing
 information in your typing history to anyone who can see your screen.
 
 However, if you don't type anything embarrasing and have eschewed typing passwords in favor of 
 a password manager, hack away, the code is free for all to use.
 
-TODO:
+## Install
+
+**WARNING: INSTALLING THIS PACKAGE IS DANGEROUS, IT'S EFFECTIVELY A KEYLOGGER THAT WRITES EVERYTHING YOU TYPE IN PLAIN TEXT TO /var/log/keystroke.log.**
+**DO NOT INSTALL THIS UNLESS YOU ARE OK WITH COMPLETELY PWN'ING EVERYTHING YOU DO ON YOUR COMPUTER FOR THE SAKE OF MILD PRODUCTIVITY GAINS**
+
+### 1. Install BitBar: https://getbitbar.com/
+
+### 2. Install OSX-Global-AutoComplete
+
+```bash
+brew install redis pypy
+brew services start redis
+pypy -m "pip" install --upgrade pykeyboard redis
+
+git clone https://github.com/pirate/osx-global-autocomplete.git
+cd osx-global-autocomplete
+```
+### 3. Set up osx-global-autocomplete
+
+Edit `bitbar-autocomplete.1s.sh` in the BitBar plugins folder to point to the correct path with the git repo.
+```
+/usr/local/bin/pypy /path/to/osx-global-autocomplete/autocomplete.py
+```
+
+Then copy it into place to enable it in BitBar:
+```bash
+cp bitbar-autocomplete.1s.sh /path/to/bitbar/plugins/folder
+```
+
+### 4. Verify that it's working
+
+```bash
+tail -f /var/log/keystroke.log
+```
+
+And start typing to see if things show up...
+
+## TODO:
  1. add helper script to train redis trie on /usr/share/dict/words, python standard library, etc.
  2. add config file to set insertion key commands
  3. finish insert code using `pyuserinput`
