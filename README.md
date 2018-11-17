@@ -1,4 +1,5 @@
-# osx-global-autocomplete
+# System-Wide Autocomplete for macOS
+
 System-wide autocomplete for macOS that learns what as you type and works in **all** text fields!
 
 The idea was to have a small popup in your menubar or as a transparent dropdown,
@@ -19,21 +20,21 @@ a password manager, hack away, the code is free for all to use.
 
 ### 1. Install BitBar: https://getbitbar.com/
 
-### 2. Install OSX-Global-AutoComplete
+### 2. Install Dependencies
 
 ```bash
 brew install redis pypy
 brew services start redis
 pypy -m "pip" install --upgrade pykeyboard redis
 
-git clone https://github.com/pirate/osx-global-autocomplete.git
-cd osx-global-autocomplete
+git clone https://github.com/pirate/macOS-global-autocomplete.git
+cd macOS-global-autocomplete
 ```
-### 3. Set up osx-global-autocomplete
+### 3. Set up macOS-global-autocomplete
 
 Edit `bitbar-autocomplete.1s.sh` in the BitBar plugins folder to point to the correct path with the git repo.
 ```
-/usr/local/bin/pypy /path/to/osx-global-autocomplete/autocomplete.py
+/usr/local/bin/pypy /path/to/macOS-global-autocomplete/autocomplete.py
 ```
 
 Then copy it into place to enable it in BitBar:
@@ -50,6 +51,7 @@ tail -f /var/log/keystroke.log
 And start typing to see if things show up...
 
 ## TODO:
+
  1. add helper script to train redis trie on /usr/share/dict/words, python standard library, etc.
  2. add config file to set insertion key commands
  3. finish insert code using `pyuserinput`
