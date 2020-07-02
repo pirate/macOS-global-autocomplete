@@ -5,12 +5,14 @@ An autocomplete prompt app for macOS that learns what as you type and works in *
 The idea was to have a small, global popup in your menubar or as a transparent dropdown,
 where autocomplete suggestions are provided based on **all words ever typed on the computer**.
 
-Unfoturnately this just has too many downsides.  You're essentially continually keylogging
+Unfortunately this just has too many downsides.  You're essentially continually keylogging
 yourself for minor convenience, and it has the potential to reveal passwords or embarrassing
 information in your typing history to anyone who can see your screen.
 
 However, if you don't type anything embarrasing and have eschewed typing passwords in favor of 
 a password manager, hack away, the code is free for all to use.
+
+*See the alternatives section at the bottom for some other potential approaches.*
 
 ## Install
 
@@ -56,3 +58,14 @@ And start typing to see if things show up...
  3. finish insert code using `pyuserinput`
  4. add code to rotate /var/log/keystroke.log
  5. add hashing blacklist functionality to exclude obsenties, sensitive words, passwords, etc.
+
+---
+
+## Alternatives
+
+- macOS Text Shortcuts (built-in): https://www.laptopmag.com/articles/autocomplete-with-text-shortcuts-os-x
+- TypeFast/macEnglish input method https://apple.stackexchange.com/a/271058/171464 / https://blog.csdn.net/lwl_ls/article/details/8564940
+- https://c-command.com/bbautocomplete/
+- http://blog.jeffterrace.com/2012/09/bash-completion-for-mac-os-x.html
+- https://www.iterm2.com/features.html#Autocomplete
+- https://fishshell.com/docs/current/#autosuggestions
